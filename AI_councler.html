@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CareerGuides.pk - AI Counselor</title>
+<link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+
+<style>
+:root {
+    --primary: #2c3e50;
+    --accent: #3498db;
+    --navbar: #034e99;
+    --white: #ffffff;
+    --gray: #7f8c8d;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Arial, sans-serif;
+}
+
+body {
+    background: #f4f6f9;
+}
+
+/* NAVBAR */
+.navbar {
+    background-color: var(--navbar);
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 40px;
+    color: white;
+}
+
+.logo {
+    font-size: 1.4rem;
+    font-weight: bold;
+    text-decoration: none;
+    color: white;
+}
+
+/* CHAT CONTAINER */
+.chat-container {
+    max-width: 800px;
+    margin: 30px auto;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+    display: flex;
+    flex-direction: column;
+    height: 80vh;
+}
+
+/* CHAT HEADER */
+.chat-header {
+    background: var(--primary);
+    color: white;
+    padding: 15px;
+    text-align: center;
+    font-weight: 600;
+    border-radius: 12px 12px 0 0;
+}
+
+/* CHAT MESSAGES */
+.chat-box {
+    flex: 1;
+    padding: 20px;
+    overflow-y: auto;
+}
+
+.message {
+    margin-bottom: 15px;
+    padding: 10px 15px;
+    border-radius: 8px;
+    max-width: 70%;
+}
+
+.user {
+    background: var(--accent);
+    color: white;
+    margin-left: auto;
+}
+
+.bot {
+    background: #ecf0f1;
+    color: #333;
+}
+
+/* INPUT AREA */
+.chat-input {
+    display: flex;
+    border-top: 1px solid #ddd;
+}
+
+.chat-input input {
+    flex: 1;
+    padding: 12px;
+    border: none;
+    outline: none;
+    font-size: 15px;
+}
+
+.chat-input button {
+    background: var(--primary);
+    color: white;
+    border: none;
+    padding: 0 20px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.chat-input button:hover {
+    background: var(--navbar);
+}
+
+footer {
+    text-align: center;
+    padding: 15px;
+    background: var(--primary);
+    color: white;
+    margin-top: 20px;
+}
+</style>
+</head>
+
+<body>
+
+<header class="navbar">
+    <a href="#" class="logo">CareerGuides.pk - AI Counselor</a>
+</header>
+
+<div class="chat-container">
+    <div class="chat-header">
+        🤖 AI Career Counselor
+    </div>
+
+    <div class="chat-box" id="chatBox">
+        <div class="message bot">
+            Hello 👋 I am your AI Career Counselor. How can I help you?
+        </div>
+    </div>
+
+    <div class="chat-input">
+        <input type="text" id="userInput" placeholder="Type your message...">
+        <button onclick="sendMessage()"><i class='bx bx-send'></i></button>
+    </div>
+</div>
+
+<footer>
+    © 2026 CareerGuides.pk | Developed by Muhammad Jawad
+</footer>
+
+<script>
+function sendMessage() {
+    let input = document.getElementById("userInput");
+    let message = input.value.trim();
+    let chatBox = document.getElementById("chatBox");
+
+    if(message === "") return;
+
+    // User Message
+    let userMsg = document.createElement("div");
+    userMsg.classList.add("message", "user");
+    userMsg.innerText = message;
+    chatBox.appendChild(userMsg);
+
+    // Bot Reply
+    let botMsg = document.createElement("div");
+    botMsg.classList.add("message", "bot");
+
+    if(message.toLowerCase() === "hello") {
+        botMsg.innerText = "Hello 👋 How can I guide you in your career today?";
+    } 
+    else {
+        botMsg.innerText = "Thank you for your message. AI logic will be added soon 😊";
+    }
+
+
+    setTimeout(() => {
+        chatBox.appendChild(botMsg);
+        chatBox.scrollTop = chatBox.scrollHeight;
+    }, 500);
+
+    input.value = "";
+}
+</script>
+
+</body>
+</html>

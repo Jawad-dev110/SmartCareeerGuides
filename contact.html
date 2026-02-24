@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CareerGuides.pk</title>
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <style>
+        :root {
+            --primary: #2c3e50;
+            --accent: #3498db;
+            --white: #ffffff;
+            --text: #333;
+        }
+
+        body {
+            margin: 0;
+            font-family: 'Segoe UI', Arial, sans-serif;
+            background-color: #f9f9f9;
+        }
+
+        /* --- TOP NAVBAR --- */
+        .navbar {
+            background-color: #034e99;
+            height: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 20px;
+            color: white;
+            position: sticky;
+            top: 0;
+            z-index: 1001;
+        }
+
+        .nav-left {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .menu-icon {
+            display: none;
+            font-size: 30px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.2rem;
+            font-weight: bold;
+        }
+
+        .nav-links-top a {
+            color: white;
+            text-decoration: none;
+            margin-left: 20px;
+            font-size: 14px;
+            transition: 0.3s;
+        }
+
+        .nav-links-top a:hover {
+            color: var(--accent);
+        }
+
+        /* --- SIDEBAR --- */
+        .sidebar {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: -280px; /* Start hidden */
+            width: 280px;
+            height: 100%;
+            background: var(--primary);
+            transition: all 0.4s ease;
+            z-index: 1002;
+            padding-top: 20px;
+        }
+
+        .sidebar.active {
+            left: 0;
+        }
+
+        .sidebar-links {
+            list-style: none;
+            padding: 0;
+        }
+
+        .sidebar-links li a {
+            display: flex;
+            align-items: center;
+            padding: 15px 25px;
+            color: #bdc3c7;
+            text-decoration: none;
+            border-bottom: 1px solid #34495e;
+        }
+
+        .sidebar-links li a i {
+            margin-right: 15px;
+            font-size: 20px;
+        }
+
+        .sidebar-links li a:hover {
+            background: #34495e;
+            color: white;
+        }
+
+        .sidebar-links .logout {
+            color: #e74c3c;
+            margin-top: 20px;
+            font-weight: bold;
+        }
+
+        /* Close Button inside Sidebar */
+        .close-btn {
+            text-align: right;
+            padding: 0 20px 20px;
+            font-size: 25px;
+            cursor: pointer;
+            color: white;
+        }
+
+        /* Overlay */
+        .overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.6);
+            display: none;
+            z-index: 1001;
+        }
+
+        .overlay.active {
+            display: block;
+        }
+
+        /* Main Content */
+        main {
+            padding: 30px;
+            max-width: 900px;
+            margin: 0 auto;
+            height: calc(100vh - 120px);
+        }
+
+         footer {
+            background: var(--primary);
+            color: white;
+            text-align: center;
+            padding: 20px;
+            margin-top: 500px;
+            margin-bottom: 0%;
+        }
+    </style>
+</head>
+<body>
+
+    <header class="navbar">
+        <div class="nav-left">
+            <div class="menu-icon" onclick="toggleSidebar()">
+                <i class='bx bx-menu'></i>
+            </div>
+            <div class="logo">CareerGuides.pk</div>
+        </div>
+        
+        <nav class="nav-links-top">
+            <a href="index.php">Home</a>
+            <a href="#about">About Us</a>
+            <a href="contact.html">Contact</a>
+            <a href="Signup.html">Sign Up</a>
+            <a href="login.html">Login</a>
+        </nav>
+    </header>
+
+    <div class="sidebar" id="sidebar">
+        <div class="close-btn" onclick="toggleSidebar()">
+            <i class='bx bx-x'></i>
+        </div>
+        <ul class="sidebar-links">
+            <li><a href="#"><i class='bx bxs-school'></i> Universities Info</a></li>
+            <li><a href="#"><i class='bx bx-edit'></i> Test</a></li>
+            <li><a href="#"><i class='bx bx-bar-chart-alt-2'></i> Results</a></li>
+            <li><a href="#"><i class='bx bx-briefcase'></i> Careers Info</a></li>
+            <li><a href="#"><i class='bx bx-bot'></i> AI Counselor</a></li>
+            <li><a href="#"><i class='bx bx-folder-open'></i> Resources</a></li>
+            <li><a href="#"><i class='bx bx-info-circle'></i> About</a></li>
+            <li><a href="#" class="logout"><i class='bx bx-log-out'></i> Logout</a></li>
+        </ul>
+    </div>
+
+    <div class="overlay" id="overlay" onclick="toggleSidebar()"></div>
+
+     <footer>
+        <p style="text-align: center; padding: 20px; background: #2c3e50; color: white;">
+            &copy; 2026 CareerGuides.pk. All rights reserved.</p>
+
+            <pre>
+            Developed by Muhammad Jawad
+            </pre>
+
+            <pre>
+                Follow us on:
+                - Facebook: facebook.com/CareerGuides.pk
+                - Twitter: twitter.com/CareerGuides
+                - LinkedIn: linkedin.com/company/CareerGuides.pk
+                - whatsaapchannel: wa.me/CareerGuides.pk
+
+            </pre>
+    </footer>
+        <script>
+        function toggleSidebar() {
+            document.getElementById('sidebar').classList.toggle('active');
+            document.getElementById('overlay').classList.toggle('active');
+        }
+    </script>
+
+</body>
+</html>
