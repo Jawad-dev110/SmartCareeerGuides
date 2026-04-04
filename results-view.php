@@ -162,6 +162,19 @@ $myResult = $descriptions[$type];
             padding: 25px;
             margin-top: 50px;
         }
+        #cr-link a {
+            color: var(--primary);
+            text-decoration: none;
+            font-weight: 600;
+        }
+        #cr-link a:hover {
+            text-decoration: underline;
+        }
+        @media (max-width: 600px) {
+            .result-card { padding: 20px; }
+             .career-box { padding: 15px; }
+             .content h1 { font-size: 2rem; }
+             .btn-action { padding: 10px 20px; font-size: 14px; }
     </style>
 </head>
 <body>
@@ -186,6 +199,7 @@ $myResult = $descriptions[$type];
                     <i class='bx bxs-graduation'></i> Suggested Career Paths:
                 </h3>
                 <p style="font-size: 1.1rem;"><?php echo $myResult['careers']; ?></p>
+                <p id="cr-link"> <a href="career_info.html" target="_blank">Explore more career options</a></p>
             </div>
 
             <div class="next-step-box">

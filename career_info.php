@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Career-info</title>
+    <style>
+             :root {
+            --primary: #2c3e50;
+            --accent: #3498db;
+            --white: #ffffff;
+            --text: #333;
+        }
+
+        body {
+            margin: 0;
+            font-family: 'Segoe UI', Arial, sans-serif;
+            background-color: #f9f9f9;
+        }
+
+        /* --- TOP NAVBAR --- */
+        .navbar {
+            background-color:#034e99;
+            height: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 20px;
+            color: white;
+            position: sticky;
+            top: 0;
+            z-index: 1001;
+        }
+
+        .nav-left {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .menu-icon {
+            font-size: 30px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.2rem;
+            font-weight: bold;
+        }
+
+        .nav-links-top a {
+            color: white;
+            text-decoration: none;
+            margin-left: 20px;
+            font-size: 14px;
+            transition: 0.3s;
+        }
+
+        .nav-links-top a:hover {
+            color: var(--accent);
+        }
+        footer {
+            background: var(--primary);
+            color: white;
+            text-align: center;
+            padding: 20px;
+            margin-top: 450px;
+            margin-bottom: 0%;
+            height: auto;
+        }
+
+    </style>
+</head>
+<body>
+    <?php include 'navbar.php'; ?>
+        
+
+     <footer>
+        <p style="text-align: center; padding: 20px; background: #2c3e50; color: white;">
+            &copy; 2026 CareerGuides.pk. All rights reserved.</p>
+
+            <pre>
+            Developed by Muhammad Jawad
+            </pre>
+
+            <pre>
+                Follow us on:
+                - Facebook: facebook.com/CareerGuides.pk
+                - Twitter: twitter.com/CareerGuides
+                - LinkedIn: linkedin.com/company/CareerGuides.pk
+                - whatsaapchannel: wa.me/CareerGuides.pk
+
+            </pre>
+    </footer>
+</body>
+</html>
