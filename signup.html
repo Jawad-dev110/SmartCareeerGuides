@@ -22,7 +22,14 @@
         }
 
         body {
-            background-color: #f9f9f9;
+            margin: 0;
+            font-family: 'Inter', 'Segoe UI', Roboto, sans-serif;
+            background-color: white;
+            background-image: url("imagebg.jpg");
+            backdrop-filter: blur(5px);
+            opacity: 0.95;
+            min-height: 100vh;
+            color: var(--text-main);
         }
 
         /* --- TOP NAVBAR --- */
@@ -90,9 +97,9 @@
         }
 
         .auth-box {
-            background: var(--white);
+             background: rgba(255, 255, 255, 0.50);
             width: 100%;
-            max-width: 450px; /* Thora sa wide rakha hai fields zyada hone ki wajah se */
+            max-width: 450px; 
             padding: 40px;
             border-radius: 12px;
             box-shadow: 0 10px 25px rgba(0,0,0,0.1);

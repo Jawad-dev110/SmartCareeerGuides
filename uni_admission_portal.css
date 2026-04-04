@@ -1,0 +1,195 @@
+:root {
+    --primary: #0d47a1;
+    --secondary: #1976d2;
+    --bg-light: #f4f7f6;
+    --white: #ffffff;
+    --text-dark: #2c3e50;
+    --border: #dcdde1;
+}
+
+body {
+    margin: 0;
+    font-family: 'Segoe UI', Roboto, sans-serif;
+    background-color: var(--bg-light);
+    color: var(--text-dark);
+}
+
+/* Header */
+.header {
+    background: var(--white);
+    padding: 15px 8%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 3px solid var(--primary);
+}
+
+.logo { font-size: 1.6rem; font-weight: 800; color: var(--primary); }
+.logo span { color: #f39c12; }
+
+.nav a {
+    text-decoration: none;
+    color: var(--text-dark);
+    margin-left: 25px;
+    font-weight: 600;
+    transition: 0.3s;
+}
+
+.nav a:hover { color: var(--primary); }
+
+.login-btn {
+    background: var(--primary);
+    color: white !important;
+    padding: 8px 20px;
+    border-radius: 5px;
+}
+
+/* Layout */
+.main-wrapper {
+    display: flex;
+    max-width: 1300px;
+    margin: 30px auto;
+    padding: 0 20px;
+    gap: 30px;
+}
+
+/* Sidebar */
+.sidebar {
+    width: 300px;
+    background: var(--white);
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+    height: fit-content;
+}
+
+.sidebar h3 { color: var(--primary); margin-top: 0; margin-bottom: 20px; }
+
+.filter-group { margin-bottom: 20px; }
+.filter-group label { display: block; font-weight: 600; margin-bottom: 8px; font-size: 0.9rem; }
+
+.sidebar input, .sidebar select {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    background: #fafafa;
+}
+
+.sidebar-search-btn {
+    width: 100%;
+    padding: 14px;
+    background: var(--primary);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 1rem;
+}
+
+.reset-link {
+    display: block;
+    text-align: center;
+    margin-top: 15px;
+    color: #e74c3c;
+    text-decoration: none;
+    font-size: 0.85rem;
+}
+
+/* Content Area */
+.content { flex: 1; }
+
+.portal-header { text-align: center; margin-bottom: 30px; }
+.portal-header h1 { color: var(--primary); margin-bottom: 5px; }
+
+/* Search Bar */
+.search-bar-container { margin-bottom: 40px; }
+.search-input-wrapper {
+    display: flex;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+    border-radius: 50px;
+    background: white;
+}
+
+.search-input-wrapper input {
+    flex: 1;
+    padding: 18px 30px;
+    border: none;
+    border-radius: 50px 0 0 50px;
+    outline: none;
+    font-size: 1rem;
+}
+
+.icon-btn {
+    background: var(--primary);
+    color: white;
+    border: none;
+    padding: 0 40px;
+    border-radius: 0 50px 50px 0;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+/* Result Cards */
+.results-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.count-badge {
+    background: #d1e7ff;
+    color: var(--primary);
+    padding: 5px 15px;
+    border-radius: 20px;
+    font-weight: bold;
+}
+
+.results-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 25px;
+}
+
+.uni-card {
+    background: white;
+    padding: 25px;
+    border-radius: 12px;
+    border-left: 5px solid var(--primary);
+    transition: 0.3s;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.03);
+}
+
+.uni-card:hover { transform: translateY(-8px); box-shadow: 0 10px 25px rgba(0,0,0,0.1); }
+
+.card-header { display: flex; justify-content: space-between; margin-bottom: 15px; }
+
+.type-pill { font-size: 0.75rem; padding: 3px 10px; border-radius: 4px; font-weight: bold; }
+.type-pill.public { background: #e3f2fd; color: #1976d2; }
+.type-pill.private { background: #fff3e0; color: #f57c00; }
+
+.rank-label { font-size: 0.8rem; color: #7f8c8d; }
+
+.uni-card h3 { margin: 10px 0; color: var(--primary); font-size: 1.2rem; }
+
+.card-body p { margin: 8px 0; font-size: 0.95rem; color: #555; }
+
+.view-details {
+    width: 100%;
+    margin-top: 15px;
+    padding: 10px;
+    background: transparent;
+    border: 1px solid var(--primary);
+    color: var(--primary);
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.view-details:hover { background: var(--primary); color: white; }
+
+/* Footer */
+.footer { background: #2c3e50; color: white; text-align: center; padding: 30px; margin-top: 50px; }

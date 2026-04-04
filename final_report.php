@@ -152,12 +152,7 @@ else if ($riasec == 'C') {
     </style>
 </head>
 <body>
-    <header class="navbar">
-        <div class="logo">CareerGuides.pk Analysis</div>
-        <div class="nav-links">
-            <a href="index.php" style="color:white; text-decoration:none;">Dashboard</a>
-        </div>
-    </header>
+   <?php include 'navbar.php'; ?>
 
     <div class="report-container">
         <div class="header-banner">

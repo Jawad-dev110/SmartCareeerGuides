@@ -14,7 +14,9 @@ if(isset($_POST['signup-btn'])) {      // Check if the signup form was submitted
         echo "<script>alert('Passwords do not match!'); window.history.back();</script>";
         exit();
     }
+    $email = $_POST['email'];
 
+}
     // Check if email already exists
     $check_email = "SELECT * FROM users WHERE email='$email'";
     $result = mysqli_query($conn, $check_email);
