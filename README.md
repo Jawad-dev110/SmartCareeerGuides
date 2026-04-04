@@ -13,6 +13,8 @@ University Directory: Information about top universities and programs.
 
 User Dashboard: A personal space for students to save results and manage profiles.
 
+university admission portal: A portal for students to get admission detals and check merit of universities and use filter option for better resuts.
+
 💻 Tech Stack
 Backend: Core PHP
 
