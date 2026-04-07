@@ -62,6 +62,13 @@
             gap: 25px;
         }
 
+        #logo-img {
+            width: 400px;
+            margin-left: -80px;
+            margin-top: 25px;
+        }
+
+
         .nav-links-top a {
             color: #e0e0e0;
             text-decoration: none;
@@ -125,7 +132,7 @@
             <div class="menu-icon" onclick="toggleSidebar()">
                 <i class='bx bx-menu-alt-left'></i>
             </div>
-            <div class="logo">Smart Career <span> Guides</span></div>
+            <div class="logo"><img id="logo-img" src="logoimage.png" alt="Logo"></div>
         </div>
         
         <nav class="nav-links-top">

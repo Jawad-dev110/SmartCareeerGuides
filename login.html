@@ -32,52 +32,7 @@
             color: var(--text-main);
         }
 
-        /* --- TOP NAVBAR --- */
-        .navbar {
-            background-color: #034e99;
-            height: 60px;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            padding: 0 40px; /* Thodi zyada padding for clean look */
-            color: white;
-            position: fixed;
-            width: 100%;
-            top: 0;
-            z-index: 1001;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-        }
-
-        .logo {
-            font-size: 1.4rem;
-            font-weight: bold;
-            color: var(--white);
-            text-decoration: none;
-            letter-spacing: 1px;
-        }
-
-        .nav-links-top {
-            display: flex;
-            align-items: center;
-            gap: 25px;
-        }
-
-        .nav-links-top a {
-            color: white;
-            text-decoration: none;
-            font-size: 15px;
-            font-weight: 500;
-            transition: 0.3s;
-        }
-
-        .nav-links-top a:hover {
-            color: var(--accent);
-        }
-
-        /* --- SIDEBAR (Hidden) --- */
-        .sidebar, .menu-icon, .overlay {
-            display: none !important; /* Login se pehle mukammal hide */
-        }
+      
 
         /* --- LOGIN FORM SECTION --- */
         main {
@@ -207,21 +162,83 @@
             margin-top: 30px;
             margin-bottom: 0%;
         }
+
+          .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 8%;
+            height: 80px; 
+            background-color: #032e5a;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            position: sticky;
+            z-index: 1000;
+        }
+
+        .logo-box {
+            position: relative;
+            height: 100%;
+            display: flex;
+            align-items: center;
+        }
+
+        #logoimg {
+          
+            height:250px; 
+            width: auto;
+            position: absolute; 
+            margin-top:15px;
+            margin-left: -150px;
+            object-fit: contain;
+            transition: 0.3s ease;
+            filter: drop-shadow(0 5px 15px rgba(0,0,0,0.2));
+        }
+
+        .auth-btns {
+            display: flex;
+            gap: 15px;
+            align-items: center;
+            margin-right: -80px;
+        }
+
+        .auth-btns a {
+            text-decoration: none;
+            padding: 10px 22px;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 14px;
+            transition: 0.3s;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .login-link { 
+            background: var(--white); 
+            color: var(--primary-blue); 
+        }
+        
+        .signup-link { 
+            border: 2px solid var(--white); 
+            color: var(--white); 
+        }
+
+
+        
     </style>
 </head>
 <body>
 
-    <header class="navbar">
-        <a href="index.html" class="logo">CareerGuides.pk</a>
-        
-        <nav class="nav-links-top">
-            <a href="dashboard.php">Home</a>
-            <a href="#">About</a>
-            <a href="Signup.html">Sign Up</a>
-            <a href="login.html">Login</a>
-        </nav>
-    </header>
-
+   <nav class="navbar">
+        <div class="logo-box">
+            <img id="logoimg" src="logoimage.png" alt="SmartCareerGuides Logo">
+        </div>
+            
+        <div class="auth-btns">
+            <a href="login.html" class="login-link"><i class='bx bxs-log-in'></i> Login</a>
+            <a href="signup.html" class="signup-link"><i class='bx bxs-user-plus'></i> Sign Up</a>
+        </div>
+    </nav>
     <main>
         <div class="auth-container">
             <div class="auth-box">
